@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>the weather</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <h1>the weather</h1>
+
+    <div class="weather-card">
+      <div id="search-container">
+        <img id="location-icon" src="./images/location-icon.svg" />
+        <input id="search-bar" type="text" placeholder="Search a location..." />
+        <button id="search-button"><img src="./images/search.svg" /></button>
+      </div>
+
+      <h2 class="city">Oslo</h2>
+
+      <div class="main-info">
+        <div class="temp">18°C</div>
+        <img src="./images/cloud.svg" alt="Clouds" class="weather-icon" />
+      </div>
+
+      <h3 class="condition">Cloudy</h3>
+
+      <div class="details">
+        <div class="detail">
+          <div class="title">Humidity</div>
+          <div class="value">60%</div>
+        </div>
+
+        <div class="detail">
+          <div class="title">Wind Speed</div>
+          <div class="value">5 km/h</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
