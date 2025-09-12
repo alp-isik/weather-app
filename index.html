@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>the weather</title>
     <link rel="stylesheet" href="/style.css" />
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <h1>the weather</h1>
+
+    <div class="toggle-container">
+      <button class="toggle-btn" id="lightBtn">
+        <img src="./images/clear-day.svg" alt="light" /> Light Mode
+      </button>
+      <button class="toggle-btn" id="darkBtn">
+        <img src="./images/bedtime.svg" alt="dark" /> Dark Mode
+      </button>
+    </div>
 
     <div class="weather-card">
       <div id="search-container">

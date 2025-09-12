@@ -1,6 +1,39 @@
-html {
+body {
+  background: white;
+  color: black;
   font-family: Arial, sans-serif;
-  background-color: lightgray;
+  transition: 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+}
+
+body.dark {
+  background: #111;
+  color: white;
+}
+
+.toggle-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.toggle-btn {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 10%;
+  background: #ccc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-btn img {
+  width: 20px;
+  height: 20px;
 }
 
 #location-icon {
@@ -25,6 +58,21 @@ html {
   cursor: pointer;
 }
 
+#search-button:hover {
+  background-color: gray;
+  transform: scale(1.1);
+}
+
+body.dark #search-bar {
+  background: #222;
+  color: white;
+  border: 1px solid #555;
+}
+
+body.dark #search-button {
+  background: #444;
+}
+
 #search-container {
   top: 1rem;
   left: 1rem;
@@ -41,8 +89,21 @@ html {
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 1rem;
-  background: #fff;
+  background: whitesmoke;
   max-width: 320px;
+}
+
+body.dark .weather-card {
+  background: #222; /* darker background */
+  color: white;
+}
+
+.weather-card img {
+  transition: filter 0.3s;
+}
+
+body.dark .weather-card img {
+  filter: invert(1) brightness(1.2); /* makes a black SVG turn white-ish */
 }
 
 .city {
