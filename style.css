@@ -1,5 +1,6 @@
+/* ========= Base ========= */
 body {
-  background: white;
+  background: gray;
   color: black;
   font-family: Arial, sans-serif;
   transition: 0.3s, color 0.3s;
@@ -7,47 +8,59 @@ body {
   padding: 0;
 }
 
+/* ========= Theme ========= */
+body.light {
+  background: lightblue;
+  color: #111;
+}
 body.dark {
   background: #111;
-  color: white;
+  color: #f4f4f4;
 }
 
-.toggle-container {
+/* ========= Theme Toggle ========= */
+.theme-box {
   position: fixed;
-  top: 1rem;
-  right: 1rem;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: whitesmoke;
+  border-radius: 1rem;
+  padding: 0.1rem 0.2rem;
   display: flex;
+  align-items: center;
+}
+body.dark .theme-box {
+  background: whitesmoke;
+}
+
+#themeBtn {
+  padding: 0.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
   gap: 0.5rem;
 }
 
-.toggle-btn {
-  padding: 0.5rem;
-  border: none;
-  border-radius: 10%;
-  background: #ccc;
-  cursor: pointer;
+/* ========= Search ========= */
+.search-box {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.4rem;
 }
-
-.toggle-btn img {
-  width: 20px;
-  height: 20px;
-}
-
-#location-icon {
+.search-loc {
   width: 1.25rem;
   height: 1.25rem;
 }
 
-#search-bar {
+#searchInput {
   height: 1.5em;
   width: 16em;
   border-radius: 1em;
 }
 
-#search-button {
+#searchBtn {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -57,30 +70,21 @@ body.dark {
   justify-content: center;
   cursor: pointer;
 }
-
-#search-button:hover {
+#searchBtn:hover {
   background-color: gray;
   transform: scale(1.1);
 }
 
-body.dark #search-bar {
+body.dark #searchInput {
   background: #222;
   color: white;
   border: 1px solid #555;
 }
-
-body.dark #search-button {
+body.dark #searchBtn {
   background: #444;
 }
 
-#search-container {
-  top: 1rem;
-  left: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
+/* ========= Weather Card ========= */
 .weather-card {
   display: flex;
   flex-direction: column;
@@ -92,21 +96,19 @@ body.dark #search-button {
   background: whitesmoke;
   max-width: 320px;
 }
-
 body.dark .weather-card {
-  background: #222; /* darker background */
+  background: #222;
   color: white;
 }
 
 .weather-card img {
   transition: filter 0.3s;
 }
-
 body.dark .weather-card img {
-  filter: invert(1) brightness(1.2); /* makes a black SVG turn white-ish */
+  filter: invert(1) brightness(1.2);
 }
 
-.city {
+.city-text {
   margin: 2.5rem;
   text-align: center;
   font-size: 3rem;
@@ -114,45 +116,42 @@ body.dark .weather-card img {
   line-height: 0;
 }
 
-.main-info {
+.main-row {
   display: flex;
   align-items: center;
   gap: 2em;
-  line-height: 0.5;
 }
 
-.temp {
+.temp-text {
   font-size: 3rem;
   font-weight: 700;
 }
-
-.weather-icon {
+.wx-icon {
   width: 5rem;
   height: 5rem;
 }
 
-.condition {
+.cond-text {
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
-  line-height: 0.2;
 }
 
-.details {
+/* ========= Details ========= */
+.detail-grid {
   display: flex;
   gap: 0.5em;
   width: 100%;
   padding-bottom: 0.5rem;
 }
-
-.detail {
+.detail-item {
   flex: 1;
   text-align: center;
 }
-.title {
+.detail-name {
   color: #777;
   font-size: 0.8rem;
 }
-.value {
+.detail-value {
   font-weight: 700;
 }

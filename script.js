@@ -1,10 +1,13 @@
-const lightBtn = document.querySelector("#lightBtn");
-const darkBtn = document.querySelector("#darkBtn");
+const themeBtn = document.getElementById("themeBtn");
 
-lightBtn.addEventListener("click", () => {
-  document.body.classList.remove("dark");
-});
-
-darkBtn.addEventListener("click", () => {
-  document.body.classList.add("dark");
+themeBtn.addEventListener("click", () => {
+  if (document.body.classList.contains("dark")) {
+    document.body.classList.replace("dark", "light");
+    themeBtn.innerHTML =
+      '<img src="./images/bedtime.svg" width="20" alt=""> Dark Mode';
+  } else {
+    document.body.classList.replace("light", "dark");
+    themeBtn.innerHTML =
+      '<img src="./images/clear-day.svg" width="20" alt=""> Light Mode';
+  }
 });

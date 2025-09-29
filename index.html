@@ -7,43 +7,43 @@
     <link rel="stylesheet" href="/style.css" />
     <script src="./script.js" defer></script>
   </head>
-  <body>
+  <body class="light">
     <h1>the weather</h1>
 
-    <div class="toggle-container">
-      <button class="toggle-btn" id="lightBtn">
-        <img src="./images/clear-day.svg" alt="light" /> Light Mode
-      </button>
-      <button class="toggle-btn" id="darkBtn">
-        <img src="./images/bedtime.svg" alt="dark" /> Dark Mode
+    <div class="theme-box">
+      <button id="themeBtn">
+        <img src="./images/bedtime.svg" width="20" /> Dark Mode
       </button>
     </div>
 
     <div class="weather-card">
-      <div id="search-container">
-        <img id="location-icon" src="./images/location-icon.svg" />
-        <input id="search-bar" type="text" placeholder="Search a location..." />
-        <button id="search-button"><img src="./images/search.svg" /></button>
+      <div class="search-box">
+        <img class="search-loc" src="./images/location-icon.svg" />
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search a location..."
+        />
+        <button id="searchBtn"><img src="./images/search.svg" /></button>
       </div>
 
-      <h2 class="city">Oslo</h2>
+      <h2 class="city-text">Oslo</h2>
 
-      <div class="main-info">
-        <div class="temp">18°C</div>
-        <img src="./images/cloud.svg" alt="Clouds" class="weather-icon" />
+      <div class="main-row">
+        <div class="temp-text">18°C</div>
+        <img src="./images/cloud.svg" class="wx-icon" />
       </div>
 
-      <h3 class="condition">Cloudy</h3>
+      <h3 class="cond-text">Cloudy</h3>
 
-      <div class="details">
-        <div class="detail">
-          <div class="title">Humidity</div>
-          <div class="value">60%</div>
+      <div class="detail-grid">
+        <div class="detail-item">
+          <div class="detail-name">Humidity</div>
+          <div class="detail-value">60%</div>
         </div>
-
-        <div class="detail">
-          <div class="title">Wind Speed</div>
-          <div class="value">5 km/h</div>
+        <div class="detail-item">
+          <div class="detail-name">Wind Speed</div>
+          <div class="detail-value">5 km/h</div>
         </div>
       </div>
     </div>
