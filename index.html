@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>the weather</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
   </head>
   <body class="light">
@@ -12,38 +12,45 @@
 
     <div class="theme-box">
       <button id="themeBtn">
-        <img src="./images/bedtime.svg" width="20" /> Dark Mode
+        <img src="./images/bedtime.svg" width="20" alt="Theme icon" />
+        Dark Mode
       </button>
     </div>
 
     <div class="weather-card">
       <div class="search-box">
-        <img class="search-loc" src="./images/location-icon.svg" />
+        <img
+          class="search-loc"
+          src="./images/location-icon.svg"
+          alt="Location"
+        />
         <input
           id="searchInput"
           type="text"
           placeholder="Search a location..."
         />
-        <button id="searchBtn"><img src="./images/search.svg" /></button>
+        <button id="searchBtn">
+          <img src="./images/search.svg" alt="Search" />
+        </button>
       </div>
 
-      <h2 class="city-text">Oslo</h2>
+      <h2 class="city-text"></h2>
 
       <div class="main-row">
-        <div class="temp-text">18°C</div>
-        <img src="./images/cloud.svg" class="wx-icon" />
+        <div class="temp-text"></div>
+        <img src="./images/cloud.svg" class="wx-icon" alt="Weather icon" />
       </div>
 
-      <h3 class="cond-text">Cloudy</h3>
+      <h3 class="cond-text"></h3>
 
       <div class="detail-grid">
         <div class="detail-item">
           <div class="detail-name">Humidity</div>
-          <div class="detail-value">60%</div>
+          <div id="humidityValue" class="detail-value"></div>
         </div>
         <div class="detail-item">
           <div class="detail-name">Wind Speed</div>
-          <div class="detail-value">5 km/h</div>
+          <div id="windValue" class="detail-value"></div>
         </div>
       </div>
     </div>

@@ -1,157 +1,162 @@
-/* ========= Base ========= */
+/* ===== Base layout ===== */
 body {
-  background: gray;
-  color: black;
-  font-family: Arial, sans-serif;
-  transition: 0.3s, color 0.3s;
   margin: 0;
-  padding: 0;
+  font-family: Arial, sans-serif;
+  transition:
+    background 0.3s,
+    color 0.3s;
+
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* places card slightly below top */
+  padding-top: 20vh;
 }
 
-/* ========= Theme ========= */
+/* ===== Themes ===== */
 body.light {
   background: lightblue;
   color: #111;
 }
+
 body.dark {
   background: #111;
   color: #f4f4f4;
 }
 
-/* ========= Theme Toggle ========= */
+/* ===== Theme toggle ===== */
 .theme-box {
   position: fixed;
   top: 0.5rem;
   right: 0.5rem;
   background: whitesmoke;
   border-radius: 1rem;
-  padding: 0.1rem 0.2rem;
-  display: flex;
-  align-items: center;
-}
-body.dark .theme-box {
-  background: whitesmoke;
+  padding: 0.25rem 0.4rem;
 }
 
 #themeBtn {
-  padding: 0.5rem;
   border: none;
   background: transparent;
   cursor: pointer;
+  padding: 0.5rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-/* ========= Search ========= */
+/* ===== Weather card ===== */
+.weather-card {
+  width: min(320px, 90%);
+  min-height: 350px;
+
+  background: whitesmoke;
+  border-radius: 1rem;
+  padding: 1.75rem 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+body.dark .weather-card {
+  background: #222;
+  color: #fff;
+}
+
+/* ===== Search row ===== */
 .search-box {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
+  width: 100%;
 }
+
 .search-loc {
   width: 1.25rem;
   height: 1.25rem;
 }
 
 #searchInput {
-  height: 1.5em;
-  width: 16em;
-  border-radius: 1em;
+  flex: 1;
+  height: 2.25rem;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  padding: 0 0.75rem;
 }
 
 #searchBtn {
-  width: 2rem;
-  height: 2rem;
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: 50%;
   border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
 }
+
 #searchBtn:hover {
-  background-color: gray;
-  transform: scale(1.1);
+  background: #ddd;
 }
 
 body.dark #searchInput {
   background: #222;
-  color: white;
+  color: #fff;
   border: 1px solid #555;
 }
+
 body.dark #searchBtn {
   background: #444;
 }
 
-/* ========= Weather Card ========= */
-.weather-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 1rem;
-  background: whitesmoke;
-  max-width: 320px;
-}
-body.dark .weather-card {
-  background: #222;
-  color: white;
-}
-
-.weather-card img {
-  transition: filter 0.3s;
-}
-body.dark .weather-card img {
-  filter: invert(1) brightness(1.2);
-}
-
+/* ===== Main weather text ===== */
 .city-text {
-  margin: 2.5rem;
+  margin: 0.25rem 0 0;
   text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
-  line-height: 0;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .main-row {
   display: flex;
   align-items: center;
-  gap: 2em;
+  gap: 1.25rem;
 }
 
 .temp-text {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 800;
 }
+
 .wx-icon {
   width: 5rem;
   height: 5rem;
 }
 
 .cond-text {
-  font-size: 1.5rem;
+  margin: 0;
+  font-size: 1.25rem;
   font-weight: 700;
   text-align: center;
 }
 
-/* ========= Details ========= */
+/* ===== Details ===== */
 .detail-grid {
-  display: flex;
-  gap: 0.5em;
   width: 100%;
-  padding-bottom: 0.5rem;
+  display: flex;
+  gap: 0.75rem;
 }
+
 .detail-item {
   flex: 1;
   text-align: center;
 }
+
 .detail-name {
-  color: #777;
   font-size: 0.8rem;
+  color: #777;
 }
+
 .detail-value {
-  font-weight: 700;
+  font-weight: 800;
 }
