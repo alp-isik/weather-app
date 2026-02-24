@@ -116,16 +116,23 @@ async function getWeather(lat, lon) {
 function renderWeather(data, cityName, country) {
   const current = data.current_weather;
 
+  // 1. City
   cityNameEl.textContent = `${cityName}, ${country}`;
-  temperatureEl.textContent = `${current.temperature}°C`;
-  windEl.textContent = `${current.windspeed} km/h`;
 
+  // 2. Weather icon + condition
+  const info = getWeatherInfo(current.weathercode);
+  weatherIconEl.src = info.icon;
+  conditionEl.textContent = info.text;
+
+  // 3. Temperature
+  temperatureEl.textContent = `${current.temperature}°C`;
+
+  // 4. Humidity
   const humidity = data.hourly?.relativehumidity_2m?.[0] ?? null;
   humidityEl.textContent = humidity === null ? "--" : `${humidity}%`;
 
-  const info = getWeatherInfo(current.weathercode);
-  conditionEl.textContent = info.text;
-  weatherIconEl.src = info.icon;
+  // 5. Wind
+  windEl.textContent = `${current.windspeed} km/h`;
 }
 
 // ===== Weather mapping =====
