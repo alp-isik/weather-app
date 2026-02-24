@@ -3,56 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>the weather</title>
+    <title>Weather</title>
     <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
   </head>
-  <body class="light">
-    <h1>the weather</h1>
 
-    <div class="theme-box">
-      <button id="themeBtn">
-        <img src="./images/bedtime.svg" width="20" alt="Theme icon" />
-        Dark Mode
+  <body class="theme-light">
+    <header class="topbar">
+      <button id="themeButton" class="theme-button" type="button">
+        <img id="themeIcon" class="icon" src="./images/bedtime.svg" alt="" />
+        <span id="themeLabel">Dark mode</span>
       </button>
-    </div>
+    </header>
 
-    <div class="weather-card">
-      <div class="search-box">
-        <img
-          class="search-loc"
-          src="./images/location-icon.svg"
-          alt="Location"
-        />
-        <input
-          id="searchInput"
-          type="text"
-          placeholder="Search a location..."
-        />
-        <button id="searchBtn">
-          <img src="./images/search.svg" alt="Search" />
-        </button>
-      </div>
+    <main class="page">
+      <h1 class="title">the weather</h1>
 
-      <h2 class="city-text"></h2>
+      <section class="card" aria-label="Weather">
+        <form id="searchForm" class="search" autocomplete="off">
+          <img
+            class="icon icon-location"
+            src="./images/location-icon.svg"
+            alt=""
+          />
 
-      <div class="main-row">
-        <div class="temp-text"></div>
-        <img src="./images/cloud.svg" class="wx-icon" alt="Weather icon" />
-      </div>
+          <input
+            id="cityInput"
+            class="search-input"
+            name="city"
+            type="text"
+            placeholder="Search a city..."
+            required
+          />
 
-      <h3 class="cond-text"></h3>
+          <button class="search-button" type="submit" aria-label="Search">
+            <img class="icon" src="./images/search.svg" alt="" />
+          </button>
+        </form>
 
-      <div class="detail-grid">
-        <div class="detail-item">
-          <div class="detail-name">Humidity</div>
-          <div id="humidityValue" class="detail-value"></div>
+        <h2 id="cityName" class="city"></h2>
+
+        <div class="now">
+          <div id="temperature" class="temp"></div>
+          <img
+            id="weatherIcon"
+            class="weather-icon"
+            src="./images/cloud.svg"
+            alt=""
+          />
         </div>
-        <div class="detail-item">
-          <div class="detail-name">Wind Speed</div>
-          <div id="windValue" class="detail-value"></div>
+
+        <p id="condition" class="condition"></p>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-name">Humidity</div>
+            <div id="humidity" class="stat-value"></div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-name">Wind</div>
+            <div id="wind" class="stat-value"></div>
+          </div>
         </div>
-      </div>
-    </div>
+
+        <p id="error" class="error" hidden></p>
+      </section>
+    </main>
   </body>
 </html>
